@@ -1,5 +1,4 @@
 .container {
-  position: relative;
   width: 95%;
   margin: 0 auto;
   max-width: 1500px;
@@ -855,6 +854,18 @@
   }
   .projectgrid {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .projectlabels {
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  .projectlabels p {
+    margin-bottom: 10px;
+  }
+  .designgrid,
+  .courseGrid {
+    gap: 0;
   }
   .courseGrid {
     grid-template-columns: 1fr;
@@ -867,6 +878,7 @@
   }
   .griditem {
     padding: 0;
+    margin-bottom: 50px;
   }
   .designgriditem,
   .othergriditem {
@@ -874,9 +886,9 @@
     text-align: center;
     align-items: flex-start;
     text-align: left;
+    margin-top: 40px;
   }
-  .featuredcard {
-  }
+
   .designgriditem:nth-child(even),
   .othergriditem:nth-child(even) {
     flex-direction: column;
@@ -894,6 +906,7 @@
   .designgriditem h3,
   .othergriditem h3 {
     font-size: 48px;
+    letter-spacing: -2px;
   }
   .designgriditem p,
   .othergriditem p {
@@ -942,7 +955,7 @@
   .headerblue,
   .headergreen,
   .headerorange {
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: -2px;
     animation: fadein ease-in forwards;
     animation-timeline: view();
@@ -968,5 +981,19 @@
 
   .othergriditem h3 {
     font-size: 36px;
+  }
+
+  .devheader,
+  .designheader,
+  .projectsheader {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .devheader svg,
+  .designheader svg,
+  .projectsheader svg {
+    margin-bottom: 10px;
+    font-size: 24px;
   }
 }
