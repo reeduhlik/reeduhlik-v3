@@ -671,11 +671,7 @@ export default function Home() {
                 NodeJS, and MongoDB. A majority of the course was recorded and
                 is available on YouTube.
               </p>
-              <div
-                className={styles.buttons}
-                style={{
-                  justifyContent: "flex-end",
-                }}>
+              <div className={styles.buttons}>
                 <a
                   href="https://www.youtube.com/channel/UCunwRSVFnbJ70hbvuqBAtPQ"
                   target="_blank"
@@ -785,6 +781,9 @@ export default function Home() {
             />
             <h3>Reed Uhlik</h3>
             <p>&copy; 2024 Reed Uhlik. All rights reserved.</p>
+            <h6 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              Scroll to Top
+            </h6>
           </div>
           <div className={styles.footerright}>
             <a href="mailto:reeduhlik@gmail.com" className={styles.footerlink}>

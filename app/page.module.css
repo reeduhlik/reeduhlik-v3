@@ -818,6 +818,13 @@
 .footerright a:hover {
   border-bottom: 2px solid #888;
 }
+.footerleft h6 {
+  cursor: pointer;
+  font-size: 16px;
+  color: #aaa;
+  font-weight: 400;
+  margin-top: 40px;
+}
 
 @media (max-width: 1200px) {
   .headerblue,
@@ -905,6 +912,7 @@
   .footerleft p {
     font-size: 14px;
   }
+
   .footerright a {
     font-size: 14px;
   }
@@ -921,13 +929,13 @@
   }
   .subtitle {
     font-size: 24px;
-    width: 80%;
+    width: 90%;
     line-height: 150%;
     color: #ccc;
   }
   .subtitle span {
     font-size: 24px;
-    width: 80%;
+    width: 100%;
     color: #ccc;
     animation: none;
   }
@@ -936,5 +944,29 @@
   .headerorange {
     font-size: 36px;
     letter-spacing: -2px;
+    animation: fadein ease-in forwards;
+    animation-timeline: view();
+    animation-range-start: 0vh;
+    animation-range-end: 40vh;
+  }
+  .featuredcard {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    margin-top: 100px;
+    animation: none;
+    opacity: 1;
+  }
+  .featuredcard img {
+    width: 100%;
+  }
+
+  .designgriditem > div,
+  .othergriditem > div {
+    padding: 0px;
+  }
+
+  .othergriditem h3 {
+    font-size: 36px;
   }
 }
