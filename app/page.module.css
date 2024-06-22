@@ -10,55 +10,6 @@
   color: #888;
 }
 
-.navigation {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 30vh;
-  right: 20px;
-  color: #888;
-  z-index: 1000;
-
-  padding: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.5s all;
-}
-.navrow svg {
-  cursor: pointer;
-  font-size: 48px;
-  border-radius: 5px;
-  color: #aaa;
-  background: #222;
-  padding: 10px;
-}
-
-.active {
-  background: var(--primary-green);
-  color: black;
-}
-
-.navigation:hover > .navrow p {
-  opacity: 1;
-}
-
-.navrow:hover {
-  color: white;
-}
-.navrow {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: end;
-  padding: 5px 0px;
-}
-.navrow p {
-  transition: 0.5s all;
-  opacity: 0;
-  font-size: 20px;
-  padding: 10px;
-}
-
 .socials {
   margin-top: 20vh;
   color: #ddd;
@@ -325,6 +276,7 @@
   animation-range-start: 40vh;
   animation-range-end: 50vh;
   transform-origin: left;
+  scroll-margin: 100px;
   opacity: 0;
 }
 
@@ -337,11 +289,13 @@
   animation-range-start: 40vh;
   animation-range-end: 50vh;
   transform-origin: left;
+  scroll-margin: 100px;
   opacity: 0;
 }
 .designheader {
   color: #acf6c5;
   display: flex;
+  scroll-margin: 100px;
   align-items: center;
   animation: projectheader linear forwards;
   animation-timeline: view();
@@ -390,7 +344,83 @@
   margin-top: 50px;
   margin-bottom: 100px;
 }
+.nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 30vh;
+  right: 0px;
+  color: #888;
+  z-index: 1000;
 
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s all;
+  opacity: 0.5;
+  scale: 0.9;
+  transform-origin: right;
+}
+.nav:hover {
+  opacity: 1;
+  scale: 1;
+}
+
+.navitem {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: end;
+  transition: 0.2s all;
+  border-radius: 100px;
+  background: none;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+
+.navitem p {
+  transition: 0.5s all;
+  opacity: 0;
+  font-size: 16px;
+
+  color: #aaa;
+  transition: 0.2s all;
+}
+.navitem:hover p {
+  opacity: 1;
+}
+.activenav svg {
+  opacity: 1;
+  color: white;
+}
+.nav svg {
+  cursor: pointer;
+  font-size: 48px;
+  border-radius: 5px;
+  color: #aaa;
+  transition: 0.2s all;
+  padding: 10px;
+}
+
+.navitem:hover > p {
+  color: white;
+  background: #111;
+}
+
+.navitem:hover svg {
+  color: white;
+  scale: 1.1;
+}
+.activenav svg {
+  opacity: 1;
+  color: white;
+}
+.activenav p {
+  opacity: 1;
+  color: white;
+  transition: 0.5s all;
+  font-weight: 500;
+}
 .griditem {
   border-radius: 15px;
   padding: 20px;
@@ -932,6 +962,37 @@
 }
 
 @media screen and (max-width: 750px) {
+  .nav {
+    flex-direction: row;
+    position: fixed;
+    bottom: 20px;
+    align-items: center;
+    top: auto;
+    right: 0vh;
+    background: #111;
+    height: fit-content;
+    opacity: 1;
+    margin: 0;
+    padding: 15px;
+    scale: 1;
+  }
+  .navitem {
+    padding-left: 0;
+    margin-left: 5px;
+  }
+  .activenav {
+    background: #333;
+    border-radius: 100px;
+    scale: 1.1;
+  }
+
+  .navitem svg {
+    font-size: 32px;
+    padding: 5px;
+  }
+  .navitem p {
+    display: none;
+  }
   .name {
     font-size: 72px;
     width: 100%;

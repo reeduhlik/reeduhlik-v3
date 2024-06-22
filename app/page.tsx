@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import {
   FaGithub,
   FaGraduationCap,
+  FaHome,
   FaLaptop,
   FaLinkedin,
   FaNodeJs,
@@ -35,13 +36,127 @@ import { TbBrandMongodb } from "react-icons/tb";
 import { DiFirebase } from "react-icons/di";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { FaBook, FaBookBookmark, FaLinesLeaning } from "react-icons/fa6";
+import { useRef, useEffect, useState } from "react";
 export default function Home() {
+  const homeRef = useRef(null);
+  const featuredRef = useRef(null);
+  const devRef = useRef(null);
+  const designRef = useRef(null);
+  const courseRef = useRef(null);
+  const otherRef = useRef(null);
+  const storyRef = useRef(null);
+
+  const scrollToRef = (ref: any) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const [actionSection, setActionSection] = useState("home");
+
+  const callback = (entries: any) => {
+    entries.forEach((entry: any) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        setActionSection(entry.target.id);
+      }
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callback, {
+      threshold: 0.5,
+    });
+
+    if (featuredRef.current) observer.observe(featuredRef.current);
+    if (devRef.current) observer.observe(devRef.current);
+    if (designRef.current) observer.observe(designRef.current);
+    if (courseRef.current) observer.observe(courseRef.current);
+    if (otherRef.current) observer.observe(otherRef.current);
+    if (storyRef.current) observer.observe(storyRef.current);
+    if (homeRef.current) observer.observe(homeRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [devRef, designRef, courseRef, otherRef, storyRef]);
+
   return (
     <main className={styles.main}>
       <a href="mailto:reeduhlik@gmail.com" className={styles.emailcontainer}>
         <p>Contact Me</p>
         <IoMailOutline className={styles.email} />
       </a>
+      <div className={styles.nav}>
+        <div
+          className={
+            actionSection == "home"
+              ? `${styles.navitem} ${styles.activenav}`
+              : styles.navitem
+          }
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <FaHome />
+          <p>Home</p>
+        </div>
+        <div
+          className={
+            actionSection == "featured"
+              ? `${styles.navitem} ${styles.activenav}`
+              : styles.navitem
+          }
+          onClick={() => scrollToRef(featuredRef)}>
+          <FaLaptop />
+          <p>Featured Projects</p>
+        </div>
+        <div
+          className={
+            actionSection == "dev"
+              ? `${styles.navitem} ${styles.activenav}`
+              : styles.navitem
+          }
+          onClick={() => scrollToRef(devRef)}>
+          <IoCodeSlash />
+          <p>Dev Portfolio</p>
+        </div>
+        <div
+          className={
+            actionSection == "design"
+              ? `${styles.navitem} ${styles.activenav}`
+              : styles.navitem
+          }
+          onClick={() => scrollToRef(designRef)}>
+          <FiPenTool />
+          <p>Design Portfolio</p>
+        </div>
+        <div
+          className={
+            actionSection == "course"
+              ? `${styles.navitem} ${styles.activenav}`
+              : styles.navitem
+          }
+          onClick={() => scrollToRef(courseRef)}>
+          <IoSchoolOutline />
+          <p>My Courses</p>
+        </div>
+        <div
+          className={
+            actionSection == "other"
+              ? `${styles.navitem} ${styles.activenav}`
+              : styles.navitem
+          }
+          onClick={() => scrollToRef(otherRef)}>
+          <FaBookBookmark />
+          <p>Other Works</p>
+        </div>
+        <div
+          className={
+            actionSection == "story"
+              ? `${styles.navitem} ${styles.activenav}`
+              : styles.navitem
+          }
+          onClick={() => scrollToRef(storyRef)}>
+          <FaLinesLeaning />
+          <p>My Story</p>
+        </div>
+      </div>
       <div className={styles.container}>
         <div
           className={styles.scrollindicatorbarhorizontal}
@@ -58,7 +173,9 @@ export default function Home() {
             top: "15vh",
           }}></div>
         <div className={styles.text}>
-          <h1 className={styles.name}>Reed Uhlik</h1>
+          <h1 className={styles.name} ref={homeRef} id="home">
+            Reed Uhlik
+          </h1>
           <h5 className={styles.subtitle}>
             <span className={styles.subsection}>
               I’m a senior at Georgetown University studying Computer Science,
@@ -101,7 +218,10 @@ export default function Home() {
 
       <div className={styles.container}>
         <div className={styles.projects}>
-          <div className={styles.projectsheader}>
+          <div
+            className={styles.projectsheader}
+            ref={featuredRef}
+            id="featured">
             <FaLaptop />
             <h5>Featured Projects</h5>
           </div>
@@ -225,7 +345,8 @@ export default function Home() {
                 </p>
                 <div className={styles.buttons}>
                   <a
-                    href="#"
+                    href="https://naimunregistration.org"
+                    target="_blank"
                     className="button"
                     style={{
                       backgroundColor: "var(--naimun-blue)",
@@ -233,13 +354,14 @@ export default function Home() {
                     View Site
                   </a>
                   <a
-                    href="#"
+                    href="https://drive.google.com/file/d/1Hln6rG5YL5JVkpvMOQw7gigzr5pwFgcj/view"
+                    target="_blank"
                     className="button"
                     style={{
                       border: "1px solid var(--naimun-blue)",
                       color: "var(--naimun-blue)",
                     }}>
-                    Watch Demo
+                    Read More
                   </a>
                 </div>
               </div>
@@ -278,7 +400,7 @@ export default function Home() {
                     </p>
                     <div className={styles.buttons}>
                       <a
-                        href="#"
+                        href="mailto:reeduhlik@gmail.com?subject=FiledAI%20Code%20Request&body=Hi%20Reed%2C%0A%0AI%20would%20love%20to%20see%20the%20code%20for%20FiledAI.%20Could%20you%20please%20send%20it%20to%20me%3F%0A%0AThanks%2C%0A%0A%5BYour%20Name%5D"
                         className="button"
                         style={{
                           backgroundColor: "var(--filedai-purple)",
@@ -286,7 +408,8 @@ export default function Home() {
                         View Code
                       </a>
                       <a
-                        href="#"
+                        href="https://www.georgetown-h2ai.com/"
+                        target="_blank"
                         className="button"
                         style={{
                           border: "1px solid var(--filedai-purple)",
@@ -300,7 +423,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.devheader}>
+          <div className={styles.devheader} ref={devRef} id="dev">
             <IoCodeSlash />
             <h5>Dev Portfolio</h5>
           </div>
@@ -409,7 +532,8 @@ export default function Home() {
               </p>
               <div className={styles.buttons}>
                 <a
-                  href="#"
+                  href="hoyadevelopers.com"
+                  target="_blank"
                   className="button"
                   style={{
                     backgroundColor: "var(--hoya-devs-purple)",
@@ -453,7 +577,8 @@ export default function Home() {
               </p>
               <div className={styles.buttons}>
                 <a
-                  href="#"
+                  href="https://poolorganizer.net"
+                  target="_blank"
                   className="button"
                   style={{
                     backgroundColor: "var(--fpo-blue)",
@@ -504,7 +629,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.designheader}>
+        <div className={styles.designheader} ref={designRef} id="design">
           <FiPenTool />
           <h5>Design Portfolio</h5>
         </div>
@@ -566,7 +691,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.devheader}>
+        <div className={styles.devheader} ref={courseRef} id="course">
           <FaGraduationCap />
           <h5>Course Portfolio</h5>
         </div>
@@ -622,7 +747,9 @@ export default function Home() {
           className={styles.designheader}
           style={{
             color: "var(--primary-orange)",
-          }}>
+          }}
+          ref={otherRef}
+          id="other">
           <FaLinesLeaning />
           <h5>Other Works</h5>
         </div>
@@ -688,7 +815,9 @@ export default function Home() {
           className={styles.designheader}
           style={{
             color: "var(--primary-green)",
-          }}>
+          }}
+          ref={storyRef}
+          id="story">
           <FaBookBookmark />
           <h5>My Story</h5>
         </div>
