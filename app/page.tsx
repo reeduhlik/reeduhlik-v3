@@ -63,7 +63,7 @@ export default function Home() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(callback, {
-      threshold: 0.5,
+      threshold: 0.8,
     });
 
     if (featuredRef.current) observer.observe(featuredRef.current);
@@ -81,10 +81,17 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <a href="mailto:reeduhlik@gmail.com" className={styles.emailcontainer}>
-        <p>Contact Me</p>
-        <IoMailOutline className={styles.email} />
-      </a>
+      <div className={styles.navsocial}>
+        <a href="https://github.com/reeduhlik" target="_blank">
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com/in/reeduhlik" target="_blank">
+          <FaLinkedin />
+        </a>
+        <a href="mailto:reeduhlik@gmail.com">
+          <IoMailOutline />
+        </a>
+      </div>
       <div className={styles.nav}>
         <div
           className={
@@ -143,7 +150,7 @@ export default function Home() {
               : styles.navitem
           }
           onClick={() => scrollToRef(otherRef)}>
-          <FaBookBookmark />
+          <FaLinesLeaning />
           <p>Other Works</p>
         </div>
         <div
@@ -153,7 +160,7 @@ export default function Home() {
               : styles.navitem
           }
           onClick={() => scrollToRef(storyRef)}>
-          <FaLinesLeaning />
+          <FaBookBookmark />
           <p>My Story</p>
         </div>
       </div>
@@ -199,6 +206,9 @@ export default function Home() {
             <a href="https://linkedin.com/in/reeduhlik" target="_blank">
               <FaLinkedin />
             </a>
+            <a href="mailto:reeduhlik@gmail.com">
+              <IoMailOutline />
+            </a>
           </div>
         </div>
         <div
@@ -214,9 +224,7 @@ export default function Home() {
             bottom: "0px",
             right: "5vw",
           }}></div>
-      </div>
 
-      <div className={styles.container}>
         <div className={styles.projects}>
           <div
             className={styles.projectsheader}
@@ -226,16 +234,8 @@ export default function Home() {
             <h5>Featured Projects</h5>
           </div>
           <h2 className={styles.headerorange}>
-            Some of my favorite things I've built
+            Some of my favorite things I've built.
           </h2>
-          <h4
-            className={styles.projectsubtitle}
-            style={{
-              marginBottom: "100px",
-            }}>
-            My apps are used by thousands of students, friends, and
-            professionals.
-          </h4>
           <div className={styles.featured}>
             <div className={styles.featuredleft}>
               <div className={`${styles.featuredcard} ${styles.slideinleft}`}>
@@ -427,11 +427,9 @@ export default function Home() {
             <IoCodeSlash />
             <h5>Dev Portfolio</h5>
           </div>
-          <h2 className={styles.headerblue}>I use coding to solve problems.</h2>
-
-          <h4 className={styles.projectsubtitle}>
-            I create solutions to inefficiencies I find around me.
-          </h4>
+          <h2 className={styles.headerblue}>
+            I solve inefficiences around me.
+          </h2>
           <div className={styles.projectgrid}>
             <div className={styles.griditem}>
               <img src="/projects/hoyalytics.png" alt="Hoya Courses" />
@@ -636,10 +634,6 @@ export default function Home() {
         <h2 className={styles.headergreen}>
           I also design stunning user interfaces.
         </h2>
-        <h4 className={styles.projectsubtitle}>
-          I believe that great software should be beautiful, simple, and easy to
-          use.
-        </h4>
         <div className={styles.designgrid}>
           <div className={styles.designgriditem}>
             <img src="/projects/reservable.png" alt="Portfolio Image" />
@@ -740,8 +734,7 @@ export default function Home() {
             fontSize: "14px",
             marginBottom: "100px",
           }}>
-          I've earned an A in every course in taken in my discipline. *
-          indicates courses I'm taking Fall 2024.
+          * indicates courses I'm taking Fall 2024.
         </p>
         <div
           className={styles.designheader}
@@ -910,7 +903,7 @@ export default function Home() {
             <h3>Reed Uhlik</h3>
             <p>&copy; 2024 Reed Uhlik. All rights reserved.</p>
             <h6 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-              Scroll to Top
+              Back to Top
             </h6>
           </div>
           <div className={styles.footerright}>

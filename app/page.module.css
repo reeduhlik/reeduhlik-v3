@@ -12,6 +12,7 @@
 
 .socials {
   margin-top: 20vh;
+  margin-bottom: 20vh;
   color: #ddd;
   animation: fadein linear forwards;
   animation-timeline: view();
@@ -36,7 +37,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-  margin-top: 3vh;
+
   margin-bottom: 2vh;
   margin-left: -5px;
   animation: fadein ease-in forwards;
@@ -64,22 +65,22 @@
   animation: focus_text linear forwards;
   animation-timeline: view();
   animation-range-start: 30vh;
-  animation-range-end: 60vh;
+  animation-range-end: 65vh;
   transition: 0.5s all;
 }
 .subsection2 {
   animation: focus_text linear forwards;
   animation-timeline: view();
-  animation-range-start: 55vh;
-  animation-range-end: 85vh;
+  animation-range-start: 70vh;
+  animation-range-end: 90vh;
   transition: 0.5s all;
 }
 
 .subsection3 {
   animation: focus_text linear forwards;
   animation-timeline: view();
-  animation-range-start: 80vh;
-  animation-range-end: 100vh;
+  animation-range-start: 90vh;
+  animation-range-end: 110vh;
   transition: 0.5s all;
 }
 
@@ -283,6 +284,9 @@
 .devheader {
   color: var(--primary-blue);
   display: flex;
+
+  width: fit-content;
+  justify-content: flex-start;
   align-items: center;
   animation: projectheader linear forwards;
   animation-timeline: view();
@@ -290,6 +294,7 @@
   animation-range-end: 50vh;
   transform-origin: left;
   scroll-margin: 100px;
+
   opacity: 0;
 }
 .designheader {
@@ -302,6 +307,7 @@
   animation-range-start: 40vh;
   animation-range-end: 50vh;
   transform-origin: left;
+  margin-bottom: -5px;
   opacity: 0;
 }
 @keyframes projectheader {
@@ -319,7 +325,7 @@
 .projectsheader svg,
 .devheader svg,
 .designheader svg {
-  font-size: 18px;
+  font-size: 24px;
   margin-right: 10px;
 }
 .projectsheader h5,
@@ -348,7 +354,7 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 30vh;
+  top: 20vh;
   right: 0px;
   color: #888;
   z-index: 1000;
@@ -361,6 +367,38 @@
   scale: 0.9;
   transform-origin: right;
 }
+
+.navsocial {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 5vh;
+  right: 0px;
+  color: #888;
+  z-index: 1000;
+
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s all;
+
+  scale: 0.8;
+  transform-origin: right;
+}
+.navsocial a {
+  transition: 0.5s all;
+  text-decoration: none;
+  color: #888;
+  padding: 10px;
+}
+.navsocial svg {
+  font-size: 36px;
+}
+
+.navsocial a:hover {
+  color: white;
+}
+
 .nav:hover {
   opacity: 1;
   scale: 1;
@@ -434,7 +472,7 @@
   animation-range-end: 50vh;
   transform-origin: top;
   opacity: 0.5;
-  background: #141414;
+  background: linear-gradient(225deg, #111 50%, #222 100%);
 }
 
 .griditem h3 {
@@ -447,6 +485,7 @@
 .griditem p {
   font-size: 16px;
   line-height: 150%;
+  margin-bottom: 10px;
   color: #888;
 }
 .griditem img {
@@ -494,7 +533,7 @@
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 40px;
-  background: #141414;
+  background: linear-gradient(225deg, #111 50%, #222 100%);
 }
 
 .featuredcard img {
@@ -564,7 +603,7 @@
 
 @keyframes slideinleft {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-20%);
     opacity: 0;
   }
   100% {
@@ -575,7 +614,7 @@
 
 @keyframes slideinup {
   0% {
-    transform: translateY(50%);
+    transform: translateY(20%);
     opacity: 0;
   }
   100% {
@@ -586,7 +625,7 @@
 
 @keyframes slideinright {
   0% {
-    transform: translateX(50%);
+    transform: translateX(20%);
     opacity: 0;
   }
   100% {
@@ -597,7 +636,7 @@
 
 @keyframes slideindown {
   0% {
-    transform: translateY(-50%);
+    transform: translateY(-20%);
     opacity: 0;
   }
   100% {
@@ -622,7 +661,8 @@
 .buttons {
   display: flex;
 
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .projectsubtitle {
@@ -965,9 +1005,9 @@
   .nav {
     flex-direction: row;
     position: fixed;
-    bottom: 20px;
+
     align-items: center;
-    top: auto;
+    top: 2vh;
     right: 0vh;
     background: #111;
     height: fit-content;
@@ -993,6 +1033,25 @@
   .navitem p {
     display: none;
   }
+
+  .navsocial {
+    flex-direction: row;
+    position: fixed;
+    bottom: 2vh;
+    right: 0vh;
+    background: #111;
+    height: fit-content;
+    opacity: 1;
+    margin: 0;
+    padding: 15px;
+    scale: 1;
+  }
+  .navsocial a {
+    padding: 5px;
+  }
+  .navsocial svg {
+    font-size: 24px;
+  }
   .name {
     font-size: 72px;
     width: 100%;
@@ -1013,18 +1072,19 @@
   .headerblue,
   .headergreen,
   .headerorange {
-    font-size: 32px;
+    font-size: 40px;
     letter-spacing: -2px;
     animation: fadein ease-in forwards;
     animation-timeline: view();
     animation-range-start: 0vh;
+    line-height: 100%;
     animation-range-end: 40vh;
   }
   .featuredcard {
-    padding: 0;
+    padding: 16px;
     width: 100%;
     margin: 0;
-    margin-top: 100px;
+    margin-top: 50px;
     animation: none;
     opacity: 1;
   }
@@ -1032,12 +1092,22 @@
     width: 100%;
   }
 
+  .griditem {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .designgriditem,
+  .othergriditem {
+    padding: 20px;
+    background: linear-gradient(225deg, #111 50%, #222 100%);
+  }
   .designgriditem > div,
   .othergriditem > div {
     padding: 0px;
   }
 
-  .othergriditem h3 {
+  .othergriditem h3,
+  .designgriditem h3 {
     font-size: 36px;
   }
 
@@ -1047,6 +1117,7 @@
     font-size: 16px;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 10px;
   }
   .devheader svg,
   .designheader svg,
