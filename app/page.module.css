@@ -353,8 +353,8 @@
 @keyframes projectheader {
   0% {
     opacity: 0;
-    scale: 3;
-    transform: translateY(-1000%);
+    scale: 1.5;
+    transform: translateY(-50%);
   }
   100% {
     opacity: 1;
@@ -398,7 +398,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  animation: slidefadein ease-out forwards;
+  animation: fadein ease-out forwards;
   animation-timeline: view();
   animation-range-start: 0px;
   animation-range-end: 50vh;
@@ -407,9 +407,6 @@
   background: #141414;
 }
 
-.griditem:nth-child(even) {
-  animation-range-end: 80vh;
-}
 .griditem h3 {
   font-size: 48px;
   letter-spacing: -2px;
@@ -526,7 +523,7 @@
 
 @keyframes zoomin {
   0% {
-    transform: scale(2);
+    transform: scale(1.2);
     opacity: 0;
   }
   100% {
@@ -537,7 +534,7 @@
 
 @keyframes slideinleft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
     opacity: 0;
   }
   100% {
@@ -548,7 +545,7 @@
 
 @keyframes slideinup {
   0% {
-    transform: translateY(100%);
+    transform: translateY(50%);
     opacity: 0;
   }
   100% {
@@ -559,7 +556,7 @@
 
 @keyframes slideinright {
   0% {
-    transform: translateX(100%);
+    transform: translateX(50%);
     opacity: 0;
   }
   100% {
@@ -570,7 +567,7 @@
 
 @keyframes slideindown {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-50%);
     opacity: 0;
   }
   100% {
@@ -626,12 +623,12 @@
   flex-direction: row;
 
   align-items: center;
-  animation: slidefadein ease-out forwards;
+  animation: fadein ease-out forwards;
   animation-timeline: view();
   animation-range-start: 0px;
-  animation-range-end: 50vh;
+  animation-range-end: 70vh;
   transform-origin: left;
-  opacity: 0.5;
+  opacity: 0;
 }
 .projectheader {
   display: flex;

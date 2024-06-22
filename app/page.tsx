@@ -134,12 +134,11 @@ export default function Home() {
                 <img src="/hoyacourses.png" alt="Hoya Courses" />
                 <h3>Hoya Courses</h3>
                 <p>
-                  After suffering every semester using the university's
-                  antiquated course registration system, I set out to create a
-                  better solution for Georgetown students to use. Hoya Courses
-                  is an online platform by thousands of Georgetown students
-                  every semester to seamlessly find classes and professors that
-                  fit their needs.
+                  After struggling to effectively plan for course registration
+                  every semester, I set out to create a better solution for
+                  Georgetown students to use. Hoya Courses is an online platform
+                  by thousands of Georgetown students every semester to
+                  seamlessly find classes and professors that fit their needs.
                 </p>
                 <div className={styles.buttons}>
                   <a
@@ -308,7 +307,7 @@ export default function Home() {
           <h2 className={styles.headerblue}>I use coding to solve problems.</h2>
 
           <h4 className={styles.projectsubtitle}>
-            I create solutions to inefficience I find around me.
+            I create solutions to inefficiencies I find around me.
           </h4>
           <div className={styles.projectgrid}>
             <div className={styles.griditem}>
@@ -688,13 +687,13 @@ export default function Home() {
         <div
           className={styles.designheader}
           style={{
-            color: "var(--primary-orange)",
+            color: "var(--primary-green)",
           }}>
           <FaBookBookmark />
           <h5>My Story</h5>
         </div>
         <h2
-          className={styles.headerorange}
+          className={styles.headergreen}
           style={{
             marginBottom: "50px",
           }}>
