@@ -530,7 +530,7 @@ export default function Home() {
               </p>
               <div className={styles.buttons}>
                 <a
-                  href="hoyadevelopers.com"
+                  href="https://hoyadevelopers.com"
                   target="_blank"
                   className="button"
                   style={{
