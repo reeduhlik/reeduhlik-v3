@@ -99,7 +99,8 @@ export default function Home() {
               ? `${styles.navitem} ${styles.activenav}`
               : styles.navitem
           }
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <FaHome />
           <p>Home</p>
         </div>
@@ -109,7 +110,8 @@ export default function Home() {
               ? `${styles.navitem} ${styles.activenav}`
               : styles.navitem
           }
-          onClick={() => scrollToRef(featuredRef)}>
+          onClick={() => scrollToRef(featuredRef)}
+        >
           <FaLaptop />
           <p>Featured Projects</p>
         </div>
@@ -119,7 +121,8 @@ export default function Home() {
               ? `${styles.navitem} ${styles.activenav}`
               : styles.navitem
           }
-          onClick={() => scrollToRef(devRef)}>
+          onClick={() => scrollToRef(devRef)}
+        >
           <IoCodeSlash />
           <p>Dev Portfolio</p>
         </div>
@@ -129,7 +132,8 @@ export default function Home() {
               ? `${styles.navitem} ${styles.activenav}`
               : styles.navitem
           }
-          onClick={() => scrollToRef(designRef)}>
+          onClick={() => scrollToRef(designRef)}
+        >
           <FiPenTool />
           <p>Design Portfolio</p>
         </div>
@@ -139,7 +143,8 @@ export default function Home() {
               ? `${styles.navitem} ${styles.activenav}`
               : styles.navitem
           }
-          onClick={() => scrollToRef(courseRef)}>
+          onClick={() => scrollToRef(courseRef)}
+        >
           <IoSchoolOutline />
           <p>My Courses</p>
         </div>
@@ -149,7 +154,8 @@ export default function Home() {
               ? `${styles.navitem} ${styles.activenav}`
               : styles.navitem
           }
-          onClick={() => scrollToRef(otherRef)}>
+          onClick={() => scrollToRef(otherRef)}
+        >
           <FaLinesLeaning />
           <p>Other Works</p>
         </div>
@@ -159,7 +165,8 @@ export default function Home() {
               ? `${styles.navitem} ${styles.activenav}`
               : styles.navitem
           }
-          onClick={() => scrollToRef(storyRef)}>
+          onClick={() => scrollToRef(storyRef)}
+        >
           <FaBookBookmark />
           <p>My Story</p>
         </div>
@@ -171,14 +178,16 @@ export default function Home() {
             transformOrigin: "left",
             left: "0px",
             top: "10vh",
-          }}></div>
+          }}
+        ></div>
         <div
           className={styles.scrollindicatorbarhorizontal}
           style={{
             transformOrigin: "right",
             right: "0px",
             top: "15vh",
-          }}></div>
+          }}
+        ></div>
         <div className={styles.text}>
           <h1 className={styles.name} ref={homeRef} id="home">
             Reed Uhlik
@@ -200,7 +209,8 @@ export default function Home() {
             <a
               href="
               https://github.com/reeduhlik"
-              target="_blank">
+              target="_blank"
+            >
               <FaGithub />
             </a>
             <a href="https://linkedin.com/in/reeduhlik" target="_blank">
@@ -216,20 +226,23 @@ export default function Home() {
           style={{
             transformOrigin: "top",
             top: "0px",
-          }}></div>
+          }}
+        ></div>
         <div
           className={styles.scrollindicatorbar}
           style={{
             transformOrigin: "bottom",
             bottom: "0px",
             right: "5vw",
-          }}></div>
+          }}
+        ></div>
 
         <div className={styles.projects}>
           <div
             className={styles.projectsheader}
             ref={featuredRef}
-            id="featured">
+            id="featured"
+          >
             <FaLaptop />
             <h5>Featured Projects</h5>
           </div>
@@ -247,7 +260,8 @@ export default function Home() {
                   <h4
                     style={{
                       color: "var(--primary-blue)",
-                    }}>
+                    }}
+                  >
                     Featured Project
                   </h4>
                 </div>
@@ -267,7 +281,8 @@ export default function Home() {
                     target="_blank"
                     style={{
                       backgroundColor: "var(--primary-blue)",
-                    }}>
+                    }}
+                  >
                     View Code
                   </a>
                   <a
@@ -276,7 +291,8 @@ export default function Home() {
                     style={{
                       border: "1px solid var(--primary-blue)",
                       color: "var(--primary-blue)",
-                    }}>
+                    }}
+                  >
                     View Site
                   </a>
                 </div>
@@ -290,7 +306,8 @@ export default function Home() {
                   <h4
                     style={{
                       color: "var(--primary-green)",
-                    }}>
+                    }}
+                  >
                     Featured Project
                   </h4>
                 </div>
@@ -307,7 +324,8 @@ export default function Home() {
                     className="button"
                     style={{
                       backgroundColor: "var(--primary-green)",
-                    }}>
+                    }}
+                  >
                     Watch Video
                   </a>
                 </div>
@@ -324,7 +342,8 @@ export default function Home() {
                   <h4
                     style={{
                       color: "var(--naimun-blue)",
-                    }}>
+                    }}
+                  >
                     Featured Project
                   </h4>
                 </div>
@@ -350,7 +369,8 @@ export default function Home() {
                     className="button"
                     style={{
                       backgroundColor: "var(--naimun-blue)",
-                    }}>
+                    }}
+                  >
                     View Site
                   </a>
                   <a
@@ -360,7 +380,8 @@ export default function Home() {
                     style={{
                       border: "1px solid var(--naimun-blue)",
                       color: "var(--naimun-blue)",
-                    }}>
+                    }}
+                  >
                     Read More
                   </a>
                 </div>
@@ -376,7 +397,8 @@ export default function Home() {
                   <h4
                     style={{
                       color: "var(--filedai-purple)",
-                    }}>
+                    }}
+                  >
                     Featured Project
                   </h4>
                 </div>
@@ -404,7 +426,8 @@ export default function Home() {
                         className="button"
                         style={{
                           backgroundColor: "var(--filedai-purple)",
-                        }}>
+                        }}
+                      >
                         View Code
                       </a>
                       <a
@@ -414,7 +437,8 @@ export default function Home() {
                         style={{
                           border: "1px solid var(--filedai-purple)",
                           color: "var(--filedai-purple)",
-                        }}>
+                        }}
+                      >
                         Read More
                       </a>
                     </div>
@@ -453,7 +477,8 @@ export default function Home() {
                   className="button"
                   style={{
                     backgroundColor: "var(--hoyalytics-blue)",
-                  }}>
+                  }}
+                >
                   View Site
                 </a>
               </div>
@@ -482,7 +507,8 @@ export default function Home() {
                   className="button"
                   style={{
                     backgroundColor: "var(--hoyahelper-blue)",
-                  }}>
+                  }}
+                >
                   Watch Video
                 </a>
                 <a
@@ -492,7 +518,8 @@ export default function Home() {
                   style={{
                     border: "1px solid var(--hoyahelper-blue)",
                     color: "var(--hoyahelper-blue)",
-                  }}>
+                  }}
+                >
                   Read More
                 </a>
               </div>
@@ -535,7 +562,8 @@ export default function Home() {
                   className="button"
                   style={{
                     backgroundColor: "var(--hoya-devs-purple)",
-                  }}>
+                  }}
+                >
                   Visit Site
                 </a>
               </div>
@@ -580,7 +608,8 @@ export default function Home() {
                   className="button"
                   style={{
                     backgroundColor: "var(--fpo-blue)",
-                  }}>
+                  }}
+                >
                   Visit Site
                 </a>
               </div>
@@ -605,7 +634,8 @@ export default function Home() {
                   className="button"
                   style={{
                     backgroundColor: "var(--hoya-devs-purple)",
-                  }}>
+                  }}
+                >
                   Visit Site
                 </a>
               </div>
@@ -702,8 +732,8 @@ export default function Home() {
             <p>Systems Design</p>
             <p>Operating Systems</p>
             <p>Network Security</p>
-            <p>Databases*</p>
-            <p>Information Assurance*</p>
+            <p>Databases</p>
+            <p>Information Assurance</p>
           </div>
           <div className={styles.courseCol}>
             <h3>Economics</h3>
@@ -715,7 +745,7 @@ export default function Home() {
             <p>Economics of Information</p>
             <p>Economics of Sports</p>
             <p>Time Series Econometrics</p>
-            <p>International Economics*</p>
+            <p>International Economics</p>
           </div>
           <div className={styles.courseCol}>
             <h3>Mathematics</h3>
@@ -727,22 +757,14 @@ export default function Home() {
             <p>Math Statistics</p>
           </div>
         </div>
-        <p
-          style={{
-            color: "#888",
-            marginTop: "0px",
-            fontSize: "14px",
-            marginBottom: "100px",
-          }}>
-          * indicates courses I'm taking Fall 2024.
-        </p>
         <div
           className={styles.designheader}
           style={{
             color: "var(--primary-orange)",
           }}
           ref={otherRef}
-          id="other">
+          id="other"
+        >
           <FaLinesLeaning />
           <h5>Other Works</h5>
         </div>
@@ -772,7 +794,8 @@ export default function Home() {
                   className="button"
                   style={{
                     backgroundColor: "#eee",
-                  }}>
+                  }}
+                >
                   Read Paper
                 </a>
               </div>
@@ -797,7 +820,8 @@ export default function Home() {
                   className="button"
                   style={{
                     backgroundColor: "#eee",
-                  }}>
+                  }}
+                >
                   View Course
                 </a>
               </div>
@@ -810,7 +834,8 @@ export default function Home() {
             color: "var(--primary-green)",
           }}
           ref={storyRef}
-          id="story">
+          id="story"
+        >
           <FaBookBookmark />
           <h5>My Story</h5>
         </div>
@@ -818,14 +843,16 @@ export default function Home() {
           className={styles.headergreen}
           style={{
             marginBottom: "50px",
-          }}>
+          }}
+        >
           Read about my interest in technology
         </h2>
         <p className={styles.storyparagraph}>
           <span
             style={{
               fontSize: "48px",
-            }}>
+            }}
+          >
             M
           </span>
           y stomach was pitted with a blend of anxiety and excitement as I
@@ -901,7 +928,7 @@ export default function Home() {
               className={styles.signature}
             />
             <h3>Reed Uhlik</h3>
-            <p>&copy; 2024 Reed Uhlik. All rights reserved.</p>
+            <p>&copy; 2025 Reed Uhlik. All rights reserved.</p>
             <h6 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
               Back to Top
             </h6>
@@ -912,12 +939,14 @@ export default function Home() {
             </a>
             <a
               href="https://linkedin.com/in/reeduhlik"
-              className={styles.footerlink}>
+              className={styles.footerlink}
+            >
               LinkedIn
             </a>
             <a
               href="https://github.com/reeduhlik"
-              className={styles.footerlink}>
+              className={styles.footerlink}
+            >
               GitHub
             </a>
           </div>
